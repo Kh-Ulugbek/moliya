@@ -24,41 +24,29 @@
     </head>
     <body class="antialiased">
         <div class="relative flex items-top justify-center min-h-screen bg-gray-100 dark:bg-gray-900 sm:items-center sm:pt-0">
-            @if (Route::has('login'))
-                <div class="hidden fixed top-0 right-0 px-6 py-4 sm:block">
-                    @auth
-                        <a href="{{ url('/home') }}" class="text-sm text-gray-700 underline">Home</a>
-                    @else
-                        <a href="{{ route('login') }}" class="text-sm text-gray-700 underline">Login</a>
-
-                        @if (Route::has('register'))
-                            <a href="{{ route('register') }}" class="ml-4 text-sm text-gray-700 underline">Register</a>
-                        @endif
-                    @endif
-                </div>
-            @endif
-
             <div class="max-w-6xl mx-auto sm:px-6 lg:px-8">
-
                 <h1>Moliya sertifikat</h1>
-
-                <form>
+                <form method="post" action="{{ route('pdf') }}">
+                    @csrf
                     <div class="form-group">
                         <label for="exampleInputEmail1">Ism</label>
-                        <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
+                        <input required type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" name="name">
 {{--                        <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>--}}
                     </div>
                     <div class="form-group">
                         <label for="exampleInputPassword1">Familya</label>
-                        <input type="text" class="form-control" id="exampleInputPassword1" placeholder="Password">
+                        <input required type="text" class="form-control" id="exampleInputPassword1" name="surname">
+                    </div>
+                    <div class="form-group">
+                        <label for="exampleInputPassword1">Sharif (Otasini ismi)</label>
+                        <input required type="text" class="form-control" id="exampleInputPassword1" name="sharif">
                     </div>
                     <div class="form-group">
                         <label for="exampleInputPassword1">Tezis nomi</label>
-                        <input type="text" class="form-control" id="exampleInputPassword1" placeholder="Password">
+                        <input required type="text" class="form-control" id="exampleInputPassword1" name="title">
                     </div>
                     <button type="submit" class="btn btn-primary">Saqlash</button>
                 </form>
-
             </div>
         </div>
     </body>
