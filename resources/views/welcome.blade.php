@@ -29,20 +29,20 @@
                 <form method="post" action="{{ route('pdf') }}">
                     @csrf
                     <div class="form-group">
-                        <label for="exampleInputEmail1">Ism</label>
+                        <label style="color: #0040ff" for="exampleInputEmail1">Ism</label>
                         <input required type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" name="name">
 {{--                        <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>--}}
                     </div>
                     <div class="form-group">
-                        <label for="exampleInputPassword1">Familya</label>
+                        <label style="color: #0040ff" for="exampleInputPassword1">Familya</label>
                         <input required type="text" class="form-control" id="exampleInputPassword1" name="surname">
                     </div>
                     <div class="form-group">
-                        <label for="exampleInputPassword1">Sharif (Otasini ismi)</label>
+                        <label style="color: #0040ff" for="exampleInputPassword1">Sharif (Otasini ismi)</label>
                         <input required type="text" class="form-control" id="exampleInputPassword1" name="sharif">
                     </div>
                     <div class="form-group">
-                        <label for="exampleInputPassword1">Tezis nomi</label>
+                        <label style="color: #0040ff" for="exampleInputPassword1">Tezis nomi</label>
                         <input required type="text" class="form-control" id="exampleInputPassword1" name="title">
                     </div>
                     <button type="submit" class="btn btn-primary">Saqlash</button>
